@@ -18,7 +18,7 @@ function init() {
     scene.add(new THREE.AmbientLight(0x404040)) 
     
     const loader = new OBJLoader()
-    loader.load('lens_objects_large.obj',
+    loader.load('https://harshimoda.github.io/lens_objects_large.obj',
                 (obj) => {
                       let material = new THREE.PointsMaterial({ color:  0xC5784B, size: 0.80 })
                       mesh = new THREE.Points(obj.children[0].geometry, material)
