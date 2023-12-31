@@ -14,7 +14,7 @@ function init() {
     
     renderer = new THREE.WebGLRenderer()
     renderer.setSize(window.innerWidth, window.innerHeight)
-    
+    const sceneContainer = document.getElementById('scene-container');
     scene.add(new THREE.AmbientLight(0x404040)) 
     
     const loader = new OBJLoader()
@@ -34,7 +34,7 @@ function init() {
                   }
                )
     
-    document.body.appendChild(renderer.domElement)
+    sceneContainer.appendChild(renderer.domElement)
     animationLoop()
 }
 
