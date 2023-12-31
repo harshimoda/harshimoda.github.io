@@ -22,7 +22,7 @@ function init() {
                 (obj) => {
                       let material = new THREE.PointsMaterial({ color:  0xC5784B, size: 0.80 })
                       mesh = new THREE.Points(obj.children[0].geometry, material)
-                      mesh.position.y = 10
+                      mesh.position.y = 0
                       scene.add(mesh)
                       
                   },
