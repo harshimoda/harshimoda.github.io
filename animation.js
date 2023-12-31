@@ -1,5 +1,5 @@
-import * as THREE from 'three'
-import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import * as THREE from 'https://unpkg.com/three@v0.160.0/build/three.module.js'
+import { OBJLoader } from 'https://unpkg.com/three@v0.160.0/three/addons/loaders/OBJLoader.js';
 
 let scene
 let camera
