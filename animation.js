@@ -20,7 +20,7 @@ function init() {
     const loader = new OBJLoader()
     loader.load('https://harshimoda.github.io/Harshi_meau_web_assest_new_solved.obj',
                 (obj) => {
-                      let material = new THREE.PointsMaterial({ color:  0xC5784B, size: 0.80 })
+                      let material = new THREE.PointsMaterial({ color:  0xC5784B, size: 0.60 })
                       mesh = new THREE.Points(obj.children[0].geometry, material)
                       mesh.position.y = 0
                       scene.add(mesh)
