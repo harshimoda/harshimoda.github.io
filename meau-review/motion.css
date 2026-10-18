@@ -1,0 +1,126 @@
+/* Keeps the MEAU palette. Only the composition and movement follow references. */
+#screen[data-page=type] .type-circles{display:flex;flex-direction:column;align-items:center;gap:20px;margin-top:24px}
+#screen .type-circle{width:var(--circleSize,260px);height:var(--circleSize,260px);aspect-ratio:1;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;padding:20px;text-align:center;transition:background var(--motionDuration),border-color var(--motionDuration),transform var(--motionDuration)}
+#screen .type-circle strong{font:500 21px/1.2 var(--headingFont);letter-spacing:-.5px}
+#screen .type-circle small{font-size:11px;color:var(--muted);max-width:105px;line-height:1.5}
+#screen .type-circle:hover,#screen .type-circle:focus-visible{border-color:var(--accent);background:var(--selectedSurface);transform:scale(1.025)}
+#screen .type-circle:active{transform:scale(.97)}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two])>.lead{margin-bottom:16px;font-size:12px;max-width:32ch}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two])>h1{font-size:32px}
+.gallery-shell{position:relative;margin:0 calc(-1 * var(--pageInset));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.shape-gallery{height:var(--galleryHeight,360px);overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;overscroll-behavior:contain;touch-action:pan-y;position:relative}
+.shape-gallery::-webkit-scrollbar{display:none}
+.shape-stage{height:100%;min-height:100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;padding:25px var(--pageInset) 22px;background:radial-gradient(ellipse at 60% 40%,#eee0d0 0%,var(--paper) 68%);display:flex;flex-direction:column;overflow:hidden}
+.shape-stage:nth-child(2){background:radial-gradient(ellipse at 40% 40%,#e8ddd4 0%,var(--paper) 68%)}
+.shape-stage:nth-child(3){background:radial-gradient(ellipse at 50% 40%,#efdfd7 0%,var(--paper) 68%)}
+.shape-stage .stage-art{position:absolute;left:-4%;right:-4%;top:48px;height:195px;display:flex;align-items:center;opacity:var(--stage-opacity,1);transform:scale(var(--stage-scale,1));will-change:transform,opacity;pointer-events:none}
+.stage-art svg{width:100%;transform:rotate(-12deg);filter:drop-shadow(0 15px 7px #5e483022)}
+.shape-stage:nth-child(2) .stage-art svg{transform:rotate(9deg)}
+.shape-stage:nth-child(3) .stage-art svg{transform:rotate(-6deg)}
+.stage-kicker{font-size:9px;letter-spacing:2px;color:var(--muted);z-index:1}
+.stage-copy{margin-top:auto;position:relative;z-index:1;padding-right:30px}
+#screen .stage-copy h2{font:500 28px/1.1 var(--headingFont);letter-spacing:-1px;margin:0 0 6px}
+#screen .stage-copy p{font-size:11px;margin:0 0 8px;max-width:27ch}
+.stage-select{display:flex;justify-content:space-between;align-items:center;width:100%;background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:12px 0 0;font-size:12px;font-weight:500;min-height:44px;color:var(--ink)}
+.stage-select span:last-child{font-size:20px;color:var(--ink)}
+.gallery-rail{position:absolute;right:7px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;z-index:2}
+.gallery-rail button{border:0;background:transparent;width:32px;height:36px;padding:10px;display:flex;align-items:center;justify-content:center}
+.gallery-rail button::after{content:'';width:4px;height:15px;border-radius:9px;background:var(--line);transition:height var(--motionDuration),background var(--motionDuration)}
+.gallery-rail .active-dot::after{height:26px;background:var(--accent)}
+.gallery-caption{display:flex;justify-content:space-between;font-size:9px;letter-spacing:1.4px;color:var(--muted);padding:12px 0}
+#screen .essence-link{border:0;border-top:1px solid var(--line);border-radius:0;background:none;margin:0;padding:17px 0}
+#screen .essence-link strong{font-size:20px}
+#screen .essence-link small{font-size:11px}
+.phone[aria-busy=true]{cursor:progress}
+@media(prefers-reduced-motion:reduce){.stage-art{transform:none!important;opacity:1!important}.type-circle{transition:none!important}}
+
+/* Full-viewport reference composition: one frame owns each scroll section. */
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]){padding:0;position:relative;overflow:hidden;min-height:0;display:flex;flex-direction:column}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two])>.eyebrow,#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two])>h1,#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two])>.lead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0;margin:0}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .gallery-shell{height:100%;min-height:0;flex:1;margin:0;border:0;overflow:hidden}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .shape-gallery{height:100%;scroll-snap-type:y proximity}
+.shape-topline{position:absolute;top:0;left:0;right:0;padding:8px var(--pageInset);display:flex;align-items:center;justify-content:space-between;z-index:3;background:var(--paper)}
+.shape-topline>span{font-size:8px;letter-spacing:1.5px;color:var(--muted)}
+.shape-topline .text{font-size:10px;text-decoration:none;padding:8px;min-height:36px}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .shape-stage{padding:76px var(--pageInset) 68px;background:var(--paper);}
+.stage-title{position:relative;z-index:1;opacity:var(--stage-opacity,1);transform:translateY(calc(var(--stage-offset,0px) * .3))}
+#screen .stage-title h2,#screen[data-page=style]>h1,#screen[data-page=custom]>h1{font:var(--headingWeight) calc(var(--headingSize) + 4px)/1.12 var(--headingFont);letter-spacing:var(--tracking);margin:9px 0}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .shape-stage .stage-art{top:30%;left:0;right:0;height:35%;justify-content:center;transform:translateY(var(--stage-offset,0px)) scale(var(--stage-scale,1));}
+.reference-frame{position:relative;width:min(94%,var(--galleryHeight,360px));aspect-ratio:700/330;overflow:hidden;filter:invert(1) grayscale(1) contrast(7);mix-blend-mode:multiply;pointer-events:none}
+.reference-frame img{position:absolute;width:470.857%;max-width:none;height:auto;top:-127.273%;user-select:none}
+.reference-frame-0 img{left:-51.429%}.reference-frame-1 img{left:-180%}.reference-frame-2 img{left:-315.714%}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .stage-copy{padding-right:5px;max-width:none;opacity:var(--stage-opacity,1);transform:translateY(calc(var(--stage-offset,0px) * -.2))}
+.stage-code{display:block;font-size:9px;letter-spacing:2px;margin-bottom:18px;color:var(--muted)}
+#screen .stage-copy p{font-size:14px;line-height:1.6;max-width:24ch;margin:0 0 13px}
+.stage-detail{display:block;font-size:10px;color:var(--muted);margin-bottom:20px}
+.stage-select{font-size:14px;border-color:var(--line);padding:16px 0 0;}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .gallery-rail{right:0;top:46%}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:17px var(--pageInset);background:var(--paper);border-top:1px solid var(--line);z-index:3;font-size:8px}
+@media(prefers-reduced-motion:reduce){.stage-title,.stage-copy{transform:none!important;opacity:1!important}}
+
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .stage-art{mix-blend-mode:multiply}.reference-frame{mix-blend-mode:normal}
+
+
+/* Page 3 artwork is also the shape selection control. */
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .shape-stage .shape-image-button{pointer-events:auto;border:0;border-radius:0;background:transparent;padding:0;cursor:pointer;color:var(--ink);touch-action:pan-y}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .shape-image-button:focus-visible{outline:2px solid var(--accent);outline-offset:-5px}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .shape-image-button .reference-frame{display:block}
+
+/* Alternate page 3: dedicated Essence section after the third shape. */
+#screen[data-page=shape-essence] .essence-art{justify-content:flex-start;padding-left:var(--pageInset);color:var(--accent)}
+.essence-art>span{font:500 46px/1.08 var(--headingFont);letter-spacing:-1.8px}
+
+/* Alternate gallery: every section settles on the same heading baseline. */
+#screen[data-page=shape-essence] .shape-gallery{scroll-snap-type:y mandatory;scroll-padding:0}
+#screen[data-page=shape-essence] .shape-stage{scroll-snap-align:start;scroll-snap-stop:always}
+
+/* Essence description: three deliberate lines. */
+#screen .essence-stage .stage-copy .essence-description{max-width:none}
+.essence-description>span{display:block;white-space:nowrap}
+
+/* Page 5 heading uses the same inset and introduction spacing as page 4. */
+#screen[data-page=custom]{padding-top:22px}
+#screen[data-page=custom]>h1{margin-left:var(--pageInset);margin-right:var(--pageInset)}
+#screen[data-page=custom]>.lead{font-size:var(--bodySize);line-height:var(--bodyLeading);margin-top:calc(1em - 8px);margin-bottom:calc(var(--sectionGap) - 5.365px)}
+
+/* Legibility across shape exploration and compact navigation copy. */
+#screen .type-circle strong{font-size:24px;line-height:1.3}
+#screen .stage-copy p{font-size:var(--bodySize);line-height:var(--bodyLeading)}
+#screen .stage-select{font-size:var(--buttonSize);font-weight:600;min-height:48px}
+.stage-kicker,.stage-code{font-size:var(--labelSize);letter-spacing:1px}
+.shape-topline>span{font-size:var(--labelSize);letter-spacing:.6px}
+.shape-topline .text{font-size:var(--secondarySize);font-weight:500}
+#screen:is([data-page=shape],[data-page=shape-essence],[data-page=shape-two]) .gallery-caption{font-size:var(--labelSize);letter-spacing:.5px}
+#screen .essence-description>span{white-space:normal}
+
+
+/* Explore Essence uses the shared brand coral. */
+#screen .shape-topline button[data-go="essence"],#screen .essence-stage button[data-go="essence"]{color:var(--accent)}
+
+/* Page 05: halve vertical spacing between navigation and the product view. */
+#screen[data-page=custom]{padding-top:11px}
+#screen[data-page=custom]>h1{margin-top:4.5px;margin-bottom:4.5px}
+#screen[data-page=custom]>.lead{margin-top:calc((1em - 8px) / 2);margin-bottom:calc((var(--sectionGap) - 5.365px) / 2)}
+#screen[data-page=custom] .custom-preview{margin-top:9px}
+
+/* Page 03: product code leads; shape name becomes supporting text. */
+.shape-topline{justify-content:flex-end}
+#screen .shape-stage:not(.essence-stage) .stage-title .stage-kicker{display:block;font-family:var(--headingFont);font-size:var(--headingSize);line-height:1.12;font-weight:var(--headingWeight);letter-spacing:var(--tracking);color:var(--ink)}
+#screen .shape-stage:not(.essence-stage) .stage-title h2{font-family:var(--headingFont);font-size:var(--bodySize);line-height:1.4;font-weight:500;letter-spacing:0;margin:8px 0 0;color:var(--muted)}
+
+/* Alternate page 03: preserve the previous composition with two options per viewport. */
+#screen[data-page=shape-two] .shape-topline,#screen[data-page=shape-two] .gallery-caption{display:none}
+#screen[data-page=shape-two] .shape-gallery{display:grid;grid-auto-rows:50%;align-content:start;scroll-snap-type:y proximity}
+#screen[data-page=shape-two] .shape-stage{height:100%;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;padding:16px var(--pageInset);border-bottom:1px solid var(--line);scroll-snap-align:start;scroll-snap-stop:normal}
+#screen[data-page=shape-two] .shape-stage .stage-art{position:relative;left:auto;right:auto;top:auto;height:100%;min-height:0;width:100%;opacity:1;transform:none;container-type:size;will-change:auto}
+#screen[data-page=shape-two] .reference-frame{width:min(82%,270px,calc(100cqh * 700 / 330));aspect-ratio:700/330;flex-shrink:0}
+#screen[data-page=shape-two] .stage-title,#screen[data-page=shape-two] .stage-copy{opacity:1;transform:none;will-change:auto}
+#screen[data-page=shape-two] .shape-stage:not(.essence-stage) .stage-title .stage-kicker{font-size:28px;line-height:1.12}
+#screen[data-page=shape-two] .stage-title h2{margin:4px 0 0}
+#screen[data-page=shape-two] .stage-copy{margin:0;padding:0}
+#screen[data-page=shape-two] .stage-copy p{margin:0 0 6px;max-width:none;line-height:1.35}
+#screen[data-page=shape-two] .stage-select{padding:8px 0 0;min-height:40px}
+#screen[data-page=shape-two] .essence-art{justify-content:flex-start;color:var(--accent)}
+#screen[data-page=shape-two] .essence-art>span{font-size:32px;line-height:1.05;letter-spacing:-1px}
+#screen[data-page=shape-two] .essence-stage .stage-title h2{font-size:28px}
+#screen[data-page=shape-two] .essence-description>span{display:inline;white-space:normal}

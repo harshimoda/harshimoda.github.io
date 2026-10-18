@@ -1,0 +1,274 @@
+/* Component rules consume parameters from design-system.js. No workflow rules. */
+:root{--accent:#db7a67;--paper:#f8f5ef;--ink:#1a1a1a;--muted:#68635e;--surface:#fffdf9;--line:#ded8d0;--selectedSurface:#f7e8e1;--headingFont:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--headingSize:38px;--headingWeight:500;--tracking:-1.5px;--bodySize:14px;--bodyLeading:1.65;--labelSize:10px;--pageInset:24px;--sectionGap:28px;--productHeight:220px;--viewerHeight:250px;--cardRadius:16px;--cardPadding:18px;--borderWidth:1px;--selectedWidth:2px;--optionGap:10px;--buttonRadius:14px;--buttonHeight:52px;--buttonSize:14px;--inputRadius:12px;--swatchSize:36px;--logoSize:32px;--wordmarkWidth:84px;--motionDuration:260ms;--motionTravel:8px}
+body{background:#ede9e3;color:var(--ink)}header{background:#f8f5ef;padding:18px 30px}header small{letter-spacing:2.5px}main{grid-template-columns:238px minmax(450px,1fr) 320px}.workspace{background:radial-gradient(ellipse at 50% 15%,#f9f6ef,#ede9e3 75%);padding:32px}.editor{background:#f5f1eb;max-height:calc(100vh - 85px);overflow:auto;position:sticky;top:0}.editor>h2{font:30px/1.1 var(--headingFont);letter-spacing:-1px}.editor>p{font-size:12px}.editor button{border-radius:8px}.editor [hidden]{display:none!important}.journey,.node{color:var(--ink)}aside>h2{font-family:var(--headingFont);letter-spacing:-1.2px}.node{border-radius:8px;transition:background var(--motionDuration)}.node.selected{background:var(--selectedSurface);box-shadow:inset 2px 0 var(--accent)}.phone{border:6px solid #22201e;box-shadow:0 30px 65px #45352820,0 4px 14px #45352814}.nav{border-bottom:0;padding:8px 18px}.nav-logo{width:var(--logoSize);height:calc(var(--logoSize) + 6px)}.nav .header-wordmark{width:var(--wordmarkWidth);height:50px}.nav.landing-header{padding:10px var(--pageInset)}#screen{padding:22px var(--pageInset) 28px;color:var(--ink);scrollbar-width:thin;scrollbar-color:var(--line) transparent}#screen h1{font-family:var(--headingFont);font-size:var(--headingSize);font-weight:var(--headingWeight);letter-spacing:var(--tracking);line-height:1.08;margin:15px 0 17px}#screen .lead,#screen p:not(.note){font-size:var(--bodySize);line-height:var(--bodyLeading)}#screen .lead{max-width:31ch;margin-bottom:var(--sectionGap)}#screen>.eyebrow{font-size:var(--labelSize);letter-spacing:2px;color:var(--muted)}#screen h3{font-size:var(--labelSize);letter-spacing:1.4px;margin:var(--sectionGap) 0 13px;color:var(--ink)}#screen .note{font-size:11px;line-height:1.65}#screen .card{background:var(--surface);border:var(--borderWidth) solid var(--line);border-radius:var(--cardRadius);padding:var(--cardPadding);transition:border-color var(--motionDuration),background var(--motionDuration),transform var(--motionDuration)}#screen button.card:hover{border-color:var(--accent);transform:translateY(-2px)}#screen .card strong{font:500 22px/1.2 var(--headingFont);letter-spacing:-.6px}#screen .card small{font-size:12px}#screen .product{height:var(--productHeight);position:relative;border-radius:var(--cardRadius);background:radial-gradient(ellipse at 50% 40%,#fffefa,#eee5da 90%);border:1px solid #e8ded2;overflow:hidden;margin:20px 0}#screen .product svg{position:relative;z-index:1;filter:drop-shadow(0 14px 8px #483c2820)}#screen .viewer{height:var(--viewerHeight)}#screen .primary,#screen .secondary{min-height:var(--buttonHeight);border-radius:var(--buttonRadius);font-size:var(--buttonSize);font-weight:500;letter-spacing:-.1px;transition:filter var(--motionDuration),transform var(--motionDuration);padding:14px 18px}#screen .primary{background:var(--accent);color:var(--ink);border:1px solid transparent}#screen .primary:hover{filter:brightness(.96)}#screen .primary:active{transform:scale(.985)}#screen .secondary{border-color:var(--line);background:transparent;color:var(--ink)}#screen .seg{gap:var(--optionGap)}#screen .seg button{border:var(--borderWidth) solid var(--line);border-radius:var(--inputRadius);background:var(--surface);color:var(--ink);font-size:13px;min-height:44px}#screen .seg button.selected{border-color:var(--accent);background:var(--selectedSurface);box-shadow:inset 0 0 0 calc(var(--selectedWidth) - 1px) var(--accent)}#screen .swatches{gap:10px}#screen .swatch{width:var(--swatchSize);height:var(--swatchSize);margin:5px;position:relative}#screen .swatch::after{content:'';position:absolute;inset:-8px;border-radius:50%}#screen .swatch.selected{box-shadow:0 0 0 2px var(--ink)}#screen .row{font-size:12px;padding:15px 0}#screen .row:last-of-type{font-weight:600}#screen select,#screen input:not([type=checkbox]){border-radius:var(--inputRadius);min-height:44px}#screen input[type=checkbox]{accent-color:var(--accent);width:18px!important;height:18px;vertical-align:middle;margin-right:9px}#screen label:has(input[type=checkbox]){padding:15px 12px;border:1px solid var(--line);background:var(--surface);border-radius:var(--cardRadius);font-size:12px}#screen .badge{background:var(--selectedSurface);color:var(--ink);border-radius:var(--inputRadius);padding:11px 13px}#screen .camera{background:radial-gradient(ellipse,#fffaf4,#eadfd3);border-radius:var(--cardRadius)}#screen .face{border-color:var(--accent)}#screen .capture{background:var(--selectedSurface);border-radius:var(--inputRadius)}#screen .text{color:var(--ink);min-height:44px}
+.lens-group{padding:0;margin:var(--sectionGap) 0;border:0;min-width:0}.lens-group legend{font-size:19px;font-weight:550;letter-spacing:-.5px;margin-bottom:6px}.lens-group .group-help{font-size:12px;margin:0 0 14px;line-height:1.6}.lens-options{display:grid;gap:var(--optionGap)}.lens-option{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;text-align:left;width:100%;padding:var(--cardPadding);border:var(--borderWidth) solid var(--line);background:var(--surface);border-radius:var(--cardRadius);color:var(--ink);transition:background var(--motionDuration),border-color var(--motionDuration)}.lens-option strong{font-size:14px;font-weight:550}.lens-option small{display:block;font-size:11px;line-height:1.5;color:var(--muted);margin-top:5px}.lens-option .price{font-size:12px;white-space:nowrap}.lens-option[aria-pressed=true]{border-color:var(--accent);box-shadow:inset 0 0 0 calc(var(--selectedWidth) - 1px) var(--accent);background:var(--selectedSurface)}.lens-option[aria-pressed=true] .price::before{content:'✓ ';font-weight:600}.purchase-dock{position:sticky;bottom:-28px;background:var(--paper);padding:12px 0 18px;border-top:1px solid var(--line);z-index:3;box-shadow:0 -12px 20px var(--paper);margin-top:var(--sectionGap)}.purchase-dock .row{padding:3px 0 9px!important;border:0}.purchase-dock .primary{margin-top:5px}.shape-thumb{height:64px;margin:-3px 0 10px;overflow:hidden;display:flex;align-items:center}.shape-thumb svg{width:190px;margin:auto}.choice-number{font-size:10px;letter-spacing:2px;color:var(--muted);display:block;margin-bottom:8px}.type-art{height:104px;display:flex;align-items:center;margin:-5px 0 10px;background:linear-gradient(135deg,#f5eee4,#fffdf7);border-radius:calc(var(--cardRadius) - 4px)}.type-art svg{width:90%;margin:auto}#screen[data-page=landing] h1{font-size:calc(var(--headingSize) + 5px);max-width:8ch;margin-top:18px}#screen[data-page=landing] .product{height:calc(var(--productHeight) + 20px);margin-top:26px;border:0;background:radial-gradient(ellipse at 50% 50%,#ede0d0 0%,var(--paper) 68%)}#screen[data-page=landing] .product svg{transform:rotate(-9deg) scale(1.08)}#screen[data-page=landing] .primary{margin-top:26px}.board{border-radius:var(--cardRadius);color:var(--ink)}.board.selected{background:var(--selectedSurface)}.board h4{font-family:var(--headingFont);letter-spacing:-.7px}.editor details{border-bottom:1px solid var(--line);padding:12px 0}.editor summary{cursor:pointer;font-size:12px;font-weight:550;padding:5px 0}.desk-label{font-size:9px;letter-spacing:2px;margin-top:25px}.token-label{display:flex;justify-content:space-between;gap:10px}.token-label output{font-variant-numeric:tabular-nums;color:var(--muted)}.editor input[type=range]{padding:0;border:0;accent-color:var(--accent);height:24px;background:transparent}.editor input[type=color]{height:32px}#tokenPanel{padding-bottom:15px}.page-enter{animation:page-in var(--motionDuration) cubic-bezier(.2,.7,.2,1)}@keyframes page-in{from{opacity:0;transform:translateY(var(--motionTravel))}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}@media(max-width:1100px){main{grid-template-columns:210px 1fr}.editor{position:static;max-height:none;grid-column:1/-1}}@media(max-width:700px){main{display:flex}.workspace{padding:20px 4px}.editor{max-height:none}.phone{width:min(390px,96vw)}}
+
+/* Page 5: pinned preview and purchase action; only selections scroll. */
+#screen[data-page=custom]{display:flex;flex-direction:column;overflow:hidden;min-height:0;padding:12px var(--pageInset) 14px}
+#screen[data-page=custom]>.eyebrow{flex:none}
+#screen[data-page=custom]>h1{flex:none;font-size:26px;margin:8px 0}
+#screen[data-page=custom]>.lead{flex:none;font-size:11px;margin:0 0 8px}
+#screen[data-page=custom] .custom-preview{flex:none}
+#screen[data-page=custom] .custom-preview .product{height:clamp(120px,24vh,var(--productHeight));margin:6px 0}
+#screen[data-page=custom] .custom-preview .note{margin:5px 0 10px}
+#screen[data-page=custom] .custom-selections{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;padding:0 5px 12px;scrollbar-color:var(--line) transparent}
+#screen[data-page=custom] .custom-selections>h3:first-child{margin-top:12px}
+#screen[data-page=custom] .swatches{flex-wrap:wrap}
+#screen[data-page=custom] .purchase-dock{position:relative;bottom:auto;flex:none;margin-top:0;padding:10px 0 0;box-shadow:none}
+
+/* Page 5 edge-to-edge product preview. */
+#screen[data-page=custom]{padding:0}
+#screen[data-page=custom]>.eyebrow,#screen[data-page=custom]>h1,#screen[data-page=custom]>.lead{margin-left:var(--pageInset);margin-right:var(--pageInset)}
+#screen[data-page=custom]>.eyebrow{margin-top:12px}
+#screen[data-page=custom] .custom-preview .custom-model-stage{background:#fffdf9;border:0;border-radius:0;margin:0;padding:0;height:clamp(150px,26vh,var(--viewerHeight));width:100%}
+#screen[data-page=custom] .custom-preview .note{margin-left:var(--pageInset);margin-right:var(--pageInset)}
+#screen[data-page=custom] .custom-selections{padding-left:var(--pageInset);padding-right:var(--pageInset)}
+#screen[data-page=custom] .purchase-dock{padding:10px var(--pageInset) 14px}
+.preview-actions{position:absolute;right:8px;top:12px;display:flex;gap:6px;z-index:3}
+#screen .preview-icon{display:flex;align-items:center;justify-content:center;width:40px;height:36px;padding:0;border:1px solid var(--line);border-radius:8px;background:#fffdf9;color:var(--ink);font-size:26px}
+#screen .preview-toggle{font-size:12px}
+#screen .preview-icon[aria-pressed=true]{color:var(--accent)}
+#screen .preview-toggle[aria-checked=true]{background:var(--selectedSurface);border-color:var(--accent)}
+#screen .preview-reset{display:flex;align-items:center;justify-content:center;min-width:36px;min-height:36px}
+
+/* Reference composition, with MEAU's existing typography and accent. */
+#screen[data-page=custom] .custom-preview{min-height:0;flex:0 1 330px}
+#screen[data-page=custom] .custom-preview .custom-model-stage{height:100%;min-height:220px;max-height:330px;background:#fffdf9;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;margin:0;padding:0}
+#screen[data-page=custom] .custom-model-stage canvas{width:100%;height:100%;padding:0;margin:0}
+#screen[data-page=custom] .preview-actions{top:12px;right:12px}
+#screen[data-page=custom] .preview-icon{width:40px;height:40px;border-radius:50%;background:#fffdf9;box-shadow:none;border:1px solid var(--line)}
+#screen[data-page=custom] .preview-toggle{position:absolute;top:12px;left:12px;z-index:3;width:auto;height:32px;border-radius:30px;gap:6px;padding:0 12px;font-size:12px;font-weight:400;background:#fffdf9;color:var(--ink)}
+#screen[data-page=custom] .preview-toggle[aria-checked=false]{color:var(--muted)}
+#screen[data-page=custom] .preview-caption{position:absolute;bottom:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;z-index:2;pointer-events:none}
+#screen[data-page=custom] .preview-product-name{font-size:9px;letter-spacing:.7px;text-transform:uppercase;max-width:45%;line-height:1.5;color:var(--ink)}
+#screen[data-page=custom] .preview-drag-hint{pointer-events:auto;display:flex;align-items:center;gap:9px;min-height:34px;padding:6px 11px;border-radius:30px;border:1px solid var(--line);background:#fffdf9;font-size:10px;color:var(--ink)}
+#screen[data-page=custom] .preview-drag-hint span{font-size:19px;line-height:1;color:var(--accent)}
+#screen[data-page=custom] .custom-model-stage svg{filter:none}
+
+/* Page 4 shares the page 5 viewer composition. */
+/* Reference composition, with MEAU's existing typography and accent. */
+#screen[data-page=style] .custom-preview{min-height:0;flex:0 1 330px}
+#screen[data-page=style] .custom-preview .custom-model-stage{height:100%;min-height:220px;max-height:330px;background:#fffdf9;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;margin:0;padding:0}
+#screen[data-page=style] .custom-model-stage canvas{width:100%;height:100%;padding:0;margin:0}
+#screen[data-page=style] .preview-actions{top:12px;right:12px}
+#screen[data-page=style] .preview-icon{width:40px;height:40px;border-radius:50%;background:#fffdf9;box-shadow:none;border:1px solid var(--line)}
+#screen[data-page=style] .preview-toggle{position:absolute;top:12px;left:12px;z-index:3;width:auto;height:32px;border-radius:30px;gap:6px;padding:0 12px;font-size:12px;font-weight:400;background:#fffdf9;color:var(--ink)}
+#screen[data-page=style] .preview-toggle[aria-checked=false]{color:var(--muted)}
+#screen[data-page=style] .preview-caption{position:absolute;bottom:12px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;gap:8px;z-index:2;pointer-events:none}
+#screen[data-page=style] .preview-product-name{font-size:9px;letter-spacing:.7px;text-transform:uppercase;max-width:45%;line-height:1.5;color:var(--ink)}
+#screen[data-page=style] .preview-drag-hint{pointer-events:auto;display:flex;align-items:center;gap:9px;min-height:34px;padding:6px 11px;border-radius:30px;border:1px solid var(--line);background:#fffdf9;font-size:10px;color:var(--ink)}
+#screen[data-page=style] .preview-drag-hint span{font-size:19px;line-height:1;color:var(--accent)}
+#screen[data-page=style] .custom-model-stage svg{filter:none}
+
+#screen[data-page=style] .custom-preview{height:330px;margin:18px calc(-1 * var(--pageInset)) 20px}
+#screen[data-page=style] .custom-preview .custom-model-stage{height:330px;padding:0;width:100%}
+
+/* Preview page: smaller fixed stage; purchase action scrolls with selections. */
+#screen[data-page=custom] .custom-preview{flex-basis:267.3px}
+#screen[data-page=custom] .custom-preview .custom-model-stage{min-height:178.2px;max-height:267.3px}
+#screen[data-page=custom] .custom-selections .purchase-dock{position:static;margin-top:var(--sectionGap);padding:12px 0 14px;box-shadow:none}
+
+/* Circular face guide across all four capture screens. */
+#screen .camera .face{width:210px;height:210px;aspect-ratio:1;border-radius:50%;flex-shrink:0}
+
+/* Capture alignment: eye level and upright head references. */
+#screen .scan-camera{position:relative;height:290px}
+#screen .scan-camera .alignment-guide{position:relative;border:1.5px solid var(--accent);background:transparent}
+.alignment-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.eye-level-line{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:1 5;stroke-linecap:round}
+.head-centre-line{stroke:var(--muted);stroke-width:1;stroke-dasharray:1 5;stroke-linecap:round;opacity:.65}
+.eye-level-label{position:absolute;left:16px;top:59px;font-size:8px;letter-spacing:1.2px;color:var(--ink)}
+.alignment-status{position:absolute;bottom:36px;left:18px;right:18px;text-align:center;font-size:9px;color:var(--muted)}
+.scan-alignment-hint{position:absolute;bottom:12px;left:12px;right:12px;text-align:center;font-size:10px;letter-spacing:.2px;color:var(--ink)}
+
+/* Local saved pairs and cart. */
+.collection-nav{display:flex;justify-content:flex-end;gap:12px;padding:0 18px 5px;flex:none}
+.collection-nav button{border:0;padding:5px 2px;font-size:10px;display:flex;align-items:center;gap:5px;min-height:30px}
+.collection-nav button>span:first-child{font-size:18px}
+.collection-nav button>span:last-child{color:var(--muted);font-variant-numeric:tabular-nums}
+.collection-card .collection-image{display:flex;align-items:center;justify-content:center;width:100%;height:115px;padding:0;background:#fffdf9;border:0;margin-bottom:12px}
+.collection-image svg{width:100%;height:100%}
+.collection-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px}
+.collection-actions button{font-size:11px;border-radius:var(--inputRadius);min-height:36px;padding:8px 10px}
+.collection-actions.quantity>span{min-width:20px;text-align:center}
+.collection-empty{padding:28px 0;text-align:center}
+.collection-empty>svg{width:40px;height:40px;color:var(--accent)}
+
+/* Header collection shortcuts: icons only, absent on the landing page. */
+.nav:not(.landing-header){display:grid;grid-template-columns:88px 1fr 88px}
+.nav:not(.landing-header)::after{display:none}
+.nav:not(.landing-header)>#back{justify-self:start}
+.nav:not(.landing-header)>#home{justify-self:center}
+.header-collections{display:flex;justify-content:flex-end;align-items:center;gap:0;width:64px;justify-self:end}
+.nav .header-collections button{display:flex;align-items:center;justify-content:center;width:32px;height:44px;padding:0;font-size:14px}
+.header-collections[hidden]{display:none!important}
+.collection-count{display:none}
+
+/* Actual selected model thumbnails and optional local prescription attachment. */
+.collection-card .collection-image{position:relative;height:150px;overflow:hidden}
+.collection-image canvas,.collection-model-image{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.prescription-upload{margin-top:var(--sectionGap)}
+#screen .prescription-attach{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:var(--inputRadius);background:var(--surface);min-height:44px;padding:12px;cursor:pointer;font-size:12px}
+#screen #prescriptionUpload{position:absolute;width:1px;height:1px;min-height:0;overflow:hidden;clip-path:inset(50%);padding:0}
+.prescription-upload:focus-within .prescription-attach{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Saved and Cart: cards fit the phone width with even side margins. */
+#screen:is([data-page=saved],[data-page=cart]){padding-left:12px;padding-right:12px;overflow-x:hidden}
+#screen:is([data-page=saved],[data-page=cart])>h1,#screen:is([data-page=saved],[data-page=cart])>.lead{margin-left:12px;margin-right:12px}
+#screen:is([data-page=saved],[data-page=cart]) .collection-card{width:100%;max-width:100%;min-width:0;margin-left:0;margin-right:0;box-sizing:border-box;overflow-wrap:anywhere}
+.collection-card .collection-image{min-width:0;max-width:100%}
+.collection-card .collection-actions{max-width:100%;min-width:0;flex-wrap:wrap}
+.collection-card .row>span{min-width:0;overflow-wrap:anywhere}
+
+/* Seamless page-to-preview surface on both configuration pages. */
+#screen:is([data-page=style],[data-page=custom]) .custom-preview .custom-model-stage{background:var(--paper);border:0;box-shadow:none}
+#screen:is([data-page=style],[data-page=custom]) .custom-model-stage .preview-icon,#screen:is([data-page=style],[data-page=custom]) .custom-model-stage .preview-drag-hint{background:var(--paper)}
+
+/* Reading-first typography for customers before their fitting. */
+:root{--secondarySize:14px}
+#screen{font-size:var(--bodySize)}
+#screen h1{line-height:1.15}
+#screen .note,#screen .card small,#screen .lens-option small,#screen .lens-group .group-help{font-size:var(--secondarySize);line-height:1.6;color:var(--ink)}
+#screen h3{font-size:var(--secondarySize);letter-spacing:.6px;font-weight:600}
+#screen .lens-option{grid-template-columns:minmax(0,1fr) auto}
+#screen .lens-option strong,#screen .lens-option .price,#screen .row,#screen .seg button{font-size:var(--bodySize)}
+#screen .lens-option strong{font-weight:600}
+#screen .seg button{min-height:48px}
+#screen label:has(input[type=checkbox]){font-size:var(--bodySize);line-height:1.5}
+#screen input,#screen select,#screen textarea{font-size:var(--bodySize)}
+#screen .text,.collection-actions button{font-size:var(--secondarySize);font-weight:500;min-height:44px}
+#screen .row{line-height:1.5}
+#screen .custom-model-stage .preview-product-name{font-size:var(--labelSize);letter-spacing:.3px;line-height:1.4}
+#screen .custom-model-stage .preview-drag-hint{font-size:var(--secondarySize)}
+#screen .custom-model-stage .preview-toggle{font-size:var(--secondarySize)}
+#screen .eye-level-label{font-size:var(--labelSize);letter-spacing:.5px;top:55px}
+#screen .alignment-status{font-size:var(--secondarySize);line-height:1.4}
+#screen .scan-alignment-hint{font-size:var(--secondarySize)}
+#screen .badge{font-size:var(--secondarySize);line-height:1.5}
+
+/* Face-ID-inspired scan composition, with MEAU's coral palette. */
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep]){text-align:center;padding-top:20px}
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep])>h1{font-size:32px;line-height:1.18;margin:10px 0 14px}
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep])>.lead{max-width:29ch;margin:0 auto 20px;font-size:var(--bodySize)}
+.scan-stepper{display:flex;justify-content:center;align-items:center;gap:6px;margin:12px 0 0}
+.scan-stepper>span:not(.scan-step-label){width:24px;height:3px;background:var(--line);border-radius:2px}
+.scan-stepper>span.current,.scan-stepper>span.complete{background:var(--accent)}
+.scan-step-label{font-size:var(--labelSize);color:var(--muted);margin-left:6px}
+#screen .scan-camera{height:310px;margin:8px 0 20px;background:transparent;border-radius:0;box-shadow:none}
+#screen .scan-camera .alignment-guide{width:240px;height:240px;border:1px solid var(--line);background:var(--paper)}
+.scan-ring{position:absolute;inset:-20px;width:calc(100% + 40px);height:calc(100% + 40px);pointer-events:none}
+.scan-ring line{stroke:var(--line);stroke-width:2;stroke-linecap:round}
+.scan-ring.complete line{stroke:var(--accent)}
+#screen .scan-camera .scan-complete{border-color:var(--accent)}
+#screen .scan-camera .eye-level-label{top:calc(39% - 24px);left:18px;font-size:var(--labelSize);color:var(--muted)}
+#screen .scan-camera .alignment-status{bottom:35px;left:16px;right:16px;font-size:var(--secondarySize);color:var(--ink)}
+#screen .scan-camera .scan-alignment-hint{bottom:0;font-size:var(--secondarySize)}
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep])>.primary{margin-top:8px}
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep])>.text{margin-top:8px}
+
+/* Scan screen sequence: heading, circular guide, then instructions. */
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep])>.scan-instructions{max-width:29ch;margin:0 auto 20px;font-size:var(--bodySize);line-height:var(--bodyLeading)}
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep]) .scan-camera{margin-bottom:12px}
+
+/* Landing reference: generous space, three-line headline, precision row and low CTA. */
+#screen[data-page=landing]{padding:0 var(--pageInset) 0;overflow-x:hidden;container-type:size}
+.atelier-landing{min-height:100%;display:flex;flex-direction:column;padding:0 0 112px}
+#screen .landing-message{padding-top:clamp(64px,14.4cqh,108px)}
+#screen .landing-message h1{font-family:var(--headingFont);font-size:calc(var(--headingSize) + 4px);line-height:1.12;font-weight:var(--headingWeight);letter-spacing:var(--tracking);margin:0 0 30px;overflow-wrap:anywhere}
+#screen .landing-message .lead{font-size:var(--bodySize);line-height:1.5;color:var(--ink);max-width:none;margin:0 0 36px}
+.landing-metrics{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink)}
+.landing-metrics>div{min-width:0}
+.landing-metrics strong,.landing-metrics span{display:block;font-size:var(--secondarySize);line-height:1.45;font-weight:400;overflow-wrap:normal}
+.landing-invitation{margin-top:auto;padding-top:48px}
+#screen .landing-start{display:flex;align-items:center;justify-content:center;gap:6px;min-height:var(--buttonHeight);width:100%;margin:0;padding:14px;border-radius:4px;font-size:var(--buttonSize);font-weight:500}
+@supports not (height:1cqh){#screen .landing-message{padding-top:85px}}
+@media(max-width:380px){.landing-metrics{gap:8px}.landing-metrics strong,.landing-metrics span{font-size:13px}}
+
+/* Keep the reference headline on exactly three lines within the phone. */
+#screen .landing-message h1:has(.landing-title-line){font-size:min(calc(var(--headingSize) + 12px),14.5cqw);overflow-wrap:normal}
+.landing-title-line{display:block;white-space:nowrap}
+
+
+/* No tint is an explicit default; account and payment screens share app tokens. */
+#screen .swatch.no-tint{width:auto;min-width:76px;padding:0 10px;border-radius:var(--inputRadius);font-size:var(--secondarySize);background:var(--surface)!important;color:var(--ink)}
+.payment-total{padding:var(--sectionGap) 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.payment-total strong{font-size:26px;font-weight:var(--headingWeight);letter-spacing:var(--tracking)}
+#screen .payment-methods button{font-size:var(--secondarySize)}
+.payment-placeholder{margin:var(--sectionGap) 0;padding:var(--cardPadding);border:1px solid var(--line);border-radius:var(--cardRadius);background:var(--surface)}
+.account-mark{display:grid;place-items:center;width:64px;height:64px;background:var(--selectedSurface);border-radius:50%;color:var(--ink);font-size:24px;margin:20px 0}
+.login-divider{display:flex;align-items:center;gap:12px;margin:24px 0;color:var(--muted);font-size:var(--secondarySize)}
+.login-divider::before,.login-divider::after{content:'';height:1px;flex:1;background:var(--line)}
+#screen .profile-identity h2{font-family:var(--headingFont);font-size:24px;font-weight:var(--headingWeight);letter-spacing:var(--tracking)}
+.profile-links{margin:var(--sectionGap) 0}
+#screen .collection-profile{display:block;margin:20px auto 0}
+
+/* Page 5 prescription attachment action: larger, readable label. */
+#screen[data-page=custom] .prescription-attach{font-size:calc(var(--bodySize) + 2px);font-weight:500}
+
+/* Payment review thumbnail uses the ordered model and appearance. */
+#screen .review-thumbnail{position:relative;width:100%;max-width:100%;height:145px;margin:0 0 12px;background:var(--paper);overflow:hidden}
+
+/* Separate the order total clearly from the option breakdown. */
+#screen .review-total{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:28px 0 24px;padding:22px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);color:var(--ink)}
+#screen .review-total>span{font-size:var(--bodySize);font-weight:600}
+#screen .review-total>strong{font-size:26px;font-weight:var(--headingWeight);white-space:nowrap}
+
+/* Shared product-view geometry and one control row on pages 04 and 05. */
+#screen:is([data-page=style],[data-page=custom]) .custom-preview{height:calc(var(--viewerHeight) + 80px);flex:0 0 calc(var(--viewerHeight) + 80px)}
+#screen[data-page=custom] .custom-preview{margin:18px 0 20px}
+#screen:is([data-page=style],[data-page=custom]) .custom-preview .custom-model-stage{height:100%;min-height:0;max-height:none;padding:0;width:100%}
+#screen:is([data-page=style],[data-page=custom]) .preview-toggle{top:12px;left:12px;height:40px;display:flex;align-items:center}
+#screen:is([data-page=style],[data-page=custom]) .preview-actions{top:12px;right:60px}
+#screen:is([data-page=style],[data-page=custom]) .preview-reset{top:12px;right:12px}
+
+/* Distinct 3D switch states, using the shared selected surface. */
+#screen:is([data-page=style],[data-page=custom]) .custom-model-stage .preview-toggle[aria-checked="true"]{background:var(--selectedSurface);border-color:var(--accent);color:var(--ink)}
+#screen:is([data-page=style],[data-page=custom]) .custom-model-stage .preview-toggle[aria-checked="false"]{background:var(--paper);border-color:var(--line);color:var(--muted)}
+
+/* Alternative B: unobtrusive gesture cue instead of the drag button. */
+#screen .preview-gesture{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:var(--secondarySize);pointer-events:none}
+.preview-gesture svg{color:var(--accent);animation:preview-swipe 2.4s ease-in-out 3}
+.custom-model-stage[data-view-mode=flat] .preview-gesture{display:none!important}
+@keyframes preview-swipe{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+@media(prefers-reduced-motion:reduce){.preview-gesture svg{animation:none}}
+
+/* Page 04 keeps scrolling available without a visible scrollbar. */
+#screen[data-page=style]{scrollbar-width:none}
+#screen[data-page=style]::-webkit-scrollbar{display:none}
+#screen .upgrade-description{display:block;margin:8px 0 0 30px;font-size:var(--secondarySize);line-height:1.6;color:var(--muted)}
+
+/* Option prices align with the offering title instead of the card centre. */
+#screen .lens-option{align-items:start}
+#screen .lens-option>span.price{align-self:start;line-height:1.3;padding-top:0;white-space:nowrap}
+#screen .lens-option strong{line-height:1.3}
+#screen .coating-feature{display:block}
+#screen .coating-feature::before{content:"• ";color:var(--muted)}
+
+/* Consistent larger collection views and an icon for an untinted lens. */
+#screen .collection-card .collection-image,#screen .review-thumbnail{height:189px;background:var(--paper)}
+#screen .swatch.no-tint{width:var(--swatchSize);min-width:0;height:var(--swatchSize);padding:5px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+#screen .swatch.no-tint svg{width:100%;height:100%}
+
+/* Scan preparation fills the content width; capture uses a familiar start/stop control. */
+#screen[data-page=intro]>.lead{max-width:none;width:100%}
+.scan-control{display:flex;flex-direction:column;align-items:center;gap:10px;margin:12px 0 8px}
+#screen .scan-toggle{display:flex;align-items:center;justify-content:center;width:68px;height:68px;min-height:68px;padding:5px;border:2px solid var(--ink);border-radius:50%;background:var(--paper);cursor:pointer}
+.scan-toggle>span{display:block;width:50px;height:50px;background:var(--accent);border-radius:50%;transition:border-radius 180ms,width 180ms,height 180ms}
+.scan-toggle.is-scanning>span{width:26px;height:26px;border-radius:5px}
+.scan-toggle:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+#screen .scan-control-label{margin:0;font-size:var(--bodySize);color:var(--muted);text-align:center}
+.scan-active .scan-ring line{stroke:var(--accent)}
+.scan-active .scan-ring{animation:scan-progress 4s linear infinite}
+@keyframes scan-progress{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.scan-active .scan-ring{animation:none}}
+
+/* Synthetic scan results, shown immediately and together before submission. */
+.scan-output{margin:16px 0;background:var(--paper);border:1px solid var(--line);border-radius:var(--cardRadius);overflow:hidden}
+.scan-output>svg{display:block;width:100%;height:230px}
+.scan-output figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-top:1px solid var(--line);font-size:var(--bodySize);font-weight:500}
+.scan-output figcaption span{font-size:12px;font-weight:400;color:var(--muted)}
+#screen .capture-review-copy{max-width:none;text-align:center}
+#screen .scan-review-grid{grid-template-columns:1fr;gap:14px}
+.scan-review-grid .scan-output{margin:0}
+.scan-review-grid .scan-output>svg{height:160px}
+.scan-review-grid .card>p{display:none}

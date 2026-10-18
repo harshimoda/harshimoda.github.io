@@ -1,0 +1,146 @@
+/* Shared app hierarchy. This layer resolves accumulated per-page overrides. */
+:root{--accentText:color-mix(in srgb,var(--accent) 70%,var(--ink));--softShadow:0 3px 12px #1a1a1a08,0 1px 2px #1a1a1a04}
+html,body,.editor,#screen,#screen .custom-selections,.shape-gallery{scrollbar-width:none;-ms-overflow-style:none}
+*::-webkit-scrollbar{width:0;height:0;display:none}
+.phone #screen{scrollbar-width:none;overflow-x:hidden}
+.nav:not(.landing-header){padding:8px var(--pageInset);min-height:60px;grid-template-columns:88px minmax(0,1fr) 88px}
+.nav .header-collections{width:88px;gap:0}
+.nav .header-collections button{width:44px;height:44px;flex-shrink:0}
+#screen[data-page]:not([data-page=landing]):not([data-page=shape]):not([data-page=shape-essence]):not([data-page=shape-two]):not([data-page=custom]){padding:20px var(--pageInset) 28px}
+#screen[data-page]>h1{font:var(--headingWeight) var(--headingSize)/1.12 var(--headingFont);letter-spacing:var(--tracking);color:var(--ink);margin-top:0;margin-bottom:12px}
+#screen[data-page]>.lead{font-size:var(--bodySize);line-height:1.55;max-width:none;color:var(--muted);margin-top:0;margin-bottom:24px;font-weight:400}
+#screen[data-page] h3{font:600 var(--secondarySize)/1.35 var(--headingFont);letter-spacing:.65px;color:var(--ink);margin-top:var(--sectionGap);margin-bottom:12px}
+#screen[data-page] .card{background:var(--surface);border-color:var(--line);box-shadow:var(--softShadow);margin-top:16px;margin-bottom:16px}
+#screen[data-page] .card strong{font:600 22px/1.25 var(--headingFont);letter-spacing:-.3px;color:var(--ink);margin-bottom:8px}
+#screen[data-page] .card small,#screen[data-page] .note,#screen[data-page] .lens-option small,#screen[data-page] .group-help{font-size:var(--secondarySize);line-height:1.55;font-weight:400;color:var(--muted)}
+#screen[data-page] .lens-group legend{font:600 20px/1.3 var(--headingFont);letter-spacing:-.3px;margin-bottom:8px}
+#screen[data-page] .lens-option{padding:var(--cardPadding);box-shadow:0 2px 8px #1a1a1a04;align-items:start}
+#screen[data-page] .lens-option strong{font-size:var(--bodySize);line-height:1.3;font-weight:600;color:var(--ink)}
+#screen[data-page] .lens-option .price{font-size:var(--secondarySize);line-height:1.45;font-weight:600;font-variant-numeric:tabular-nums}
+#screen[data-page] .lens-option[aria-pressed=true]{background:var(--selectedSurface);box-shadow:inset 0 0 0 calc(var(--selectedWidth) - 1px) var(--accent)}
+#screen[data-page] .row{font-size:var(--secondarySize);line-height:1.5;padding:14px 0;font-weight:400}
+#screen[data-page] .row>span:first-child{color:var(--muted);flex:1;min-width:0}
+#screen[data-page] .row>span:last-child{color:var(--ink);font-weight:600;white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums}
+#screen[data-page] .primary,#screen[data-page] .secondary{font-size:var(--buttonSize);font-weight:600;line-height:1.3;min-height:var(--buttonHeight);margin-top:12px}
+#screen[data-page] .primary{box-shadow:0 3px 9px #db7a6720}
+#screen[data-page] .secondary{background:var(--surface);border-color:var(--line);box-shadow:0 1px 3px #1a1a1a04}
+#screen[data-page] .text{font-size:var(--secondarySize);font-weight:500;line-height:1.45}
+#screen[data-page] label{font-size:var(--secondarySize);font-weight:500;line-height:1.45}
+#screen[data-page] input,#screen[data-page] select{background:var(--surface);font-size:var(--bodySize);line-height:1.4}
+#screen[data-page] .badge{font-weight:600;border:1px solid var(--line);padding:9px 12px}
+#screen button:focus-visible,#screen input:focus-visible,#screen select:focus-visible{outline:2px solid var(--accentText);outline-offset:3px}
+/* Same header baseline, lead spacing, canvas dimensions and control coordinates. */
+#screen[data-page=custom]{padding-top:20px;padding-bottom:0}
+#screen[data-page=custom]>.lead{margin-left:var(--pageInset);margin-right:var(--pageInset)}
+#screen:is([data-page=style],[data-page=custom]) .custom-preview{height:calc(var(--viewerHeight) + 80px);flex:0 0 calc(var(--viewerHeight) + 80px);margin-top:0;margin-bottom:20px}
+#screen[data-page=style] .custom-preview{margin-left:calc(-1 * var(--pageInset));margin-right:calc(-1 * var(--pageInset));width:calc(100% + 2 * var(--pageInset))}
+#screen:is([data-page=style],[data-page=custom]) .custom-preview .custom-model-stage{height:100%;max-height:none;min-height:0;margin:0;width:100%;border:0;border-radius:0;background:var(--paper)}
+#screen:is([data-page=style],[data-page=custom]) .preview-caption{left:var(--pageInset);right:var(--pageInset);bottom:14px}
+#screen .custom-model-stage .preview-product-name{font-size:var(--labelSize);color:var(--muted);letter-spacing:.5px;font-weight:500}
+#screen[data-page=custom] .custom-selections{padding:0 var(--pageInset) 24px;scrollbar-width:none}
+#screen[data-page=custom] .custom-selections>h3:first-child{margin-top:4px}
+#screen[data-page=custom] .purchase-dock{padding:18px 0 0;margin-top:24px;border-top:1px solid var(--line);background:var(--paper)}
+#screen[data-page=custom] .purchase-dock .row>span:first-child{color:var(--ink);font-weight:600}
+#screen[data-page=custom] .purchase-dock .row>span:last-child{font-size:22px}
+/* Stable card scale and a stronger monetary hierarchy. */
+#screen:is([data-page=saved],[data-page=cart])>h1,#screen:is([data-page=saved],[data-page=cart])>.lead{margin-left:0;margin-right:0}
+#screen .collection-card .collection-image,#screen .review-thumbnail{height:189px;background:var(--surface);border-radius:calc(var(--cardRadius) - 4px)}
+#screen .collection-card .collection-image{margin-bottom:16px}
+#screen .collection-card>small+small{margin-top:4px}
+#screen .collection-actions button{min-height:44px;font-size:var(--secondarySize);padding:10px 12px;background:var(--surface)}
+#screen .review-total,#screen .payment-total{padding:20px var(--cardPadding);margin:24px 0;background:var(--selectedSurface);border:1px solid var(--line);border-radius:var(--cardRadius);box-shadow:var(--softShadow)}
+#screen .review-total>span,#screen .payment-total>span{font-size:var(--bodySize);font-weight:600;color:var(--ink)}
+#screen .review-total strong,#screen .payment-total strong{font:600 28px/1.2 var(--headingFont);letter-spacing:-.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+#screen .payment-placeholder{background:var(--surface);box-shadow:var(--softShadow)}
+#screen .payment-placeholder>strong{font-size:20px;font-weight:600}
+#screen .payment-placeholder>p{font-size:var(--secondarySize);line-height:1.55}
+#screen .seg{flex-wrap:wrap;gap:8px}
+#screen .seg button{font-size:var(--bodySize);font-weight:500;min-height:48px;min-width:70px}
+#screen .profile-identity h2{font:600 24px/1.2 var(--headingFont);letter-spacing:-.4px;margin:0 0 10px}
+#screen .profile-identity p{font-size:var(--secondarySize);line-height:1.55;margin-bottom:24px}
+#screen .account-mark{box-shadow:inset 0 0 0 1px var(--line);margin:0 0 20px}
+/* Calm scan hierarchy with consistent margins before and after capture. */
+#screen:is([data-page=front],[data-page=right],[data-page=left],[data-page=sweep]) .scan-instructions{font-size:var(--bodySize);line-height:1.55;max-width:none;margin:0 0 20px;color:var(--muted)}
+#screen .scan-review-grid .card{margin:0;padding:var(--cardPadding)}
+#screen .scan-output{box-shadow:var(--softShadow)}
+#screen .scan-output figcaption{font-size:var(--secondarySize);font-weight:600}
+#screen .scan-output figcaption span{font-size:var(--labelSize);font-weight:400;color:var(--muted)}
+#screen[data-page=intro]>.lead{max-width:none}
+/* Coral becomes a readable text tone; filled actions retain the original coral. */
+#screen .shape-topline button[data-go=essence],#screen .essence-stage button[data-go=essence]{color:var(--accentText)}
+#screen .landing-metrics strong{font-size:20px;line-height:1.2;font-weight:600;margin-bottom:6px}
+#screen .landing-metrics span{font-size:var(--secondarySize);color:var(--muted)}
+#screen .landing-message .lead{color:var(--muted)}
+#screen .landing-start{margin-top:0}
+@media(prefers-reduced-motion:reduce){#screen *,#screen *::before,#screen *::after{animation:none!important;transition:none!important}}
+
+/* Gallery headings share the app baseline; its secondary action sits in the footer. */
+#screen:is([data-page=shape],[data-page=shape-essence]) .shape-stage{padding-top:20px;padding-bottom:72px}
+#screen:is([data-page=shape],[data-page=shape-essence]) .reference-frame{width:min(92%,var(--matchedFrameWidth,288px))}
+#screen:is([data-page=shape],[data-page=shape-essence]) .reference-frame-0{--matchedFrameWidth:288px}
+#screen:is([data-page=shape],[data-page=shape-essence]) .reference-frame-1{--matchedFrameWidth:281px}
+#screen:is([data-page=shape],[data-page=shape-essence]) .reference-frame-2{--matchedFrameWidth:269px}
+#screen:is([data-page=shape],[data-page=shape-essence]) .shape-topline{top:auto;bottom:0;padding:8px var(--pageInset);background:transparent}
+#screen:is([data-page=shape],[data-page=shape-essence]) .gallery-caption{background:transparent;pointer-events:none;padding-right:160px}
+#screen .essence-stage .stage-title h2{font:var(--headingWeight) var(--headingSize)/1.12 var(--headingFont);letter-spacing:var(--tracking);margin:8px 0}
+#screen .essence-art{color:var(--accentText)}
+
+
+/* Login identity precedes the page heading. */
+#screen:is([data-page=login],[data-page=profile]) > .account-mark{margin:0 auto 20px}
+
+/* Cart quantity stays legible alongside the header icon. */
+.header-collections button[data-go=cart]{position:relative}
+#cartCount{display:grid;place-items:center;position:absolute;top:0;right:0;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border-radius:12px;background:var(--accent);color:var(--ink);font-size:11px;font-weight:600;line-height:1;box-shadow:0 0 0 2px var(--paper);font-variant-numeric:tabular-nums}
+#cartCount[hidden]{display:none}
+
+/* Page 5 scrolls its heading away while the product stays in view. */
+.phone #screen[data-page=custom]{display:block;min-height:0;padding-top:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+/* Initial heading spacing scrolls away instead of leaving a gap above the sticky preview. */
+.phone #screen[data-page=custom]>h1{margin-top:20px}
+.phone #screen[data-page=custom] .custom-preview{position:sticky;top:0;z-index:5;background:var(--paper)}
+.phone #screen[data-page=custom] .custom-selections{display:block;flex:none;min-height:0;overflow:visible;overscroll-behavior:auto}
+.phone>.nav,.phone>.status,.phone>.bar{flex-shrink:0}
+
+/* Balance eyewear choices and align gallery artwork with configuration previews. */
+#screen[data-page=type] .type-circles{margin-top:44px}
+#screen:is([data-page=shape],[data-page=shape-essence]) .shape-stage:not(.essence-stage) .stage-art{top:calc(20px + var(--headingSize) * 1.12 + 12px + var(--bodySize) * 1.55 + 24px);height:calc(var(--viewerHeight) + 80px)}
+
+/* The next Essential heading remains visible below the current option. */
+#screen:is([data-page=shape],[data-page=shape-essence]) .shape-stage:not(.essence-stage){height:calc(100% - 140px);min-height:calc(20px + var(--headingSize) * 1.12 + 12px + var(--bodySize) * 1.55 + 24px + var(--viewerHeight) + 80px + 130px);padding-bottom:24px}
+#screen:is([data-page=shape],[data-page=shape-essence]) .shape-stage:not(.essence-stage) .stage-title{opacity:1;transform:none}
+
+
+#screen[data-page=type] .type-circle:nth-child(2){margin-top:12px}
+
+/* Account access balances both sides of the shared navigation. */
+.nav:not(.landing-header){grid-template-columns:132px minmax(0,1fr) 132px}
+.nav .header-collections{width:132px}
+/* Equal baseline for eyewear and scan circles. */
+#screen[data-page=type] .type-circles{margin-top:60px}
+#screen .type-circle strong{text-transform:uppercase;font-size:20px;letter-spacing:.5px}
+/* Price hierarchy and configuration choices. */
+#screen .review-total strong,#screen .payment-total strong{font-size:22px;line-height:1.3}
+#screen .style-price{margin-top:24px;padding:18px 0 0;border-top:1px solid var(--line)}
+#screen .style-price .row{border:0;padding:3px 0 9px}
+#screen .style-price .row>span:first-child{color:var(--ink);font-weight:600}
+#screen .style-price .row>span:last-child{font-size:22px}
+#screen:is([data-page=style],[data-page=custom]) .custom-preview{margin-bottom:0}
+#screen .scan-instructions{min-height:calc(var(--bodySize) * 1.55 * 5)}
+.scan-active .scan-ring{animation-duration:18s}
+#screen .scan-consent{padding:14px;border:1px solid var(--line);border-radius:var(--cardRadius);background:var(--surface);line-height:1.5}
+#screen[data-page=privacy] h3{margin-top:24px}
+
+/* Configuration sections start on the same baseline after the shared preview. */
+#screen[data-page=style] .custom-preview + h3{margin-top:4px}
+
+#screen[data-page=privacy] a{color:var(--accentText);text-decoration:underline;overflow-wrap:anywhere}
+#screen[data-page=privacy] .policy-source{display:block;padding:14px 0;min-height:44px;font-weight:600}
+
+/* Landing copyright sits below the invitation. */
+#screen .atelier-landing{position:relative}
+#screen[data-page=landing] .atelier-landing > p.landing-copyright{position:absolute;bottom:8px;left:0;width:100%;margin:0;font-size:6px;line-height:1.4;font-weight:400;text-align:center;color:var(--muted)}
+
+/* Coral action labels follow the editable card-surface color. */
+.primary,#screen[data-page] .primary{color:var(--surface)}
+.primary span,#screen[data-page] .primary span{color:inherit}

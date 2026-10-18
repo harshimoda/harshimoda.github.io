@@ -1,0 +1,137 @@
+/* Preserve the authoritative reference's sizing, typography and components. */
+#screen[data-page=landing].usp-landing{container-type:normal;padding:20px var(--pageInset) 28px;overflow-y:auto}
+#screen .usp-intro h1{font:var(--headingWeight) var(--headingSize)/1.12 var(--headingFont);letter-spacing:var(--tracking);margin:0 0 12px;max-width:none}
+#screen .usp-intro .lead{font-size:var(--bodySize);line-height:1.55;margin:0 0 8px;color:var(--muted)}
+#screen .usp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin:15px 0}
+#screen .usp-steps strong{display:block;font-size:var(--secondarySize);font-weight:600;margin-bottom:5px}
+#screen .usp-steps span{font-size:var(--labelSize);line-height:1.4;color:var(--muted)}
+#screen .usp-secondary-links{display:flex;justify-content:space-between;gap:14px;margin-top:8px}
+#screen .usp-secondary-links button{font-size:var(--secondarySize);min-height:44px}
+#screen .usp-simulation-note{font-size:var(--labelSize);line-height:1.5;color:var(--muted);margin:12px 0}
+
+/* Centred logo with Cart and Profile in the app header. */
+.phone>.nav,.phone>.nav:not(.landing-header){display:flex;justify-content:center;min-height:56px;padding:8px var(--pageInset)}
+.phone>.nav #back,.phone>.nav #wordmarkButton,.phone>.nav #collectionNav{display:none!important}
+.phone>.nav::after{display:none!important}
+.phone #screen{min-height:0}
+.phone>.nav .usp-header-actions{position:absolute;right:var(--pageInset);top:50%;transform:translateY(-50%);display:flex;gap:2px;padding:0}
+.usp-header-actions button{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;background:transparent;color:var(--muted)}
+.usp-header-actions button[aria-current=page]{color:var(--accentText)}
+.usp-header-actions svg{flex-shrink:0}
+.usp-progress{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:8px var(--pageInset) 15px;flex-shrink:0}
+.usp-progress[hidden]{display:none}
+.usp-progress i{display:block;width:100%;height:4px;border-radius:4px;background:var(--line);margin-bottom:8px}
+.usp-progress .current i{background:var(--accent)}
+.usp-progress span{font-size:var(--labelSize);letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+#screen .usp-film{margin:16px calc(-1 * var(--pageInset)) 12px;background:var(--paper)}
+#screen .usp-film video{display:block;width:100%;height:260px;object-fit:contain;background:var(--paper)}
+#screen .usp-film video[hidden]{display:none}
+#screen .usp-film-error{padding:20px var(--pageInset);font-size:var(--secondarySize)}
+#screen .usp-film-error[hidden]{display:none}
+#screen[data-page=landing] .primary{margin-top:12px}
+
+/* Back navigation shares the original header without displacing the centred logo. */
+.phone>.nav,.phone>.nav:not(.landing-header){position:relative;flex-shrink:0}
+.phone>.nav #back:not([hidden]){display:flex!important;position:absolute;left:var(--pageInset);top:50%;transform:translateY(-50%);align-items:center;justify-content:center;width:44px;height:44px;padding:0}
+.phone>.nav #back[hidden]{display:none!important}
+#screen .usp-path span{display:block;font-size:var(--secondarySize);margin-top:16px;color:var(--accentText)}
+/* Preserve the original heading, 210px guide and capture button.
+   Reduce the empty space above the action to lift it clear of the footer. */
+.phone #screen.usp-scan-page{display:flex;flex-direction:column;gap:8px;padding:20px var(--pageInset) 12px;overflow-y:auto;container-type:normal}
+#screen.usp-scan-page>h1{margin:0 0 4px;flex-shrink:0}
+#screen.usp-scan-page .scan-stepper{margin:0;min-height:22px;flex-shrink:0}
+#screen.usp-scan-page .scan-camera{flex:1 1 290px;min-height:230px;max-height:290px;height:auto;margin:0;overflow:visible}
+#screen.usp-scan-page .scan-camera .alignment-guide{width:210px;height:210px}
+#screen.usp-scan-page .scan-instructions,#screen.usp-scan-page .capture-review-copy{font-size:var(--bodySize);line-height:1.55;margin:0;min-height:0;flex-shrink:0}
+#screen.usp-scan-page .scan-control{margin:0;padding:0;flex-shrink:0}
+#screen.usp-scan-page .scan-control-label{margin:6px 0 0}
+#screen.usp-scan-page .scan-output{flex:1 1 230px;min-height:180px;max-height:290px;margin:0;overflow:hidden}
+#screen.usp-scan-page .scan-output svg{width:100%;height:calc(100% - 34px);max-height:240px;display:block}
+#screen.usp-scan-page>.primary,#screen.usp-scan-page>.secondary{margin:0;flex-shrink:0}
+#screen.usp-prep-page .scan-consent{margin:16px 0}
+#screen.usp-prep-page>h3{margin-top:18px}
+
+#screen .usp-eyewear-options{margin:0 0 var(--sectionGap)}
+
+
+#screen .usp-review-captures{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin:20px 0}
+#screen .usp-review-captures .card{margin:0;padding:12px;min-width:0}
+#screen .usp-review-captures .scan-output{margin:0}
+#screen .usp-review-captures .scan-output svg{width:100%;height:210px}
+#screen .usp-review-captures .secondary{font-size:var(--secondarySize);padding:10px 6px;min-height:44px}
+
+#screen.usp-prep-page .usp-scan-privacy{display:block;min-height:44px;margin:-8px 0 12px;padding:8px 0;font-size:var(--labelSize);color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+#screen .usp-profile-privacy{display:flex;align-items:center;justify-content:center;width:44px;min-height:44px;padding:10px;margin:var(--sectionGap) 0 0 auto;border:0;background:transparent;color:var(--muted)}
+#screen .usp-profile-privacy svg{flex-shrink:0}
+
+/* Match Page 5: heading scrolls away while the product stays above selections. */
+.phone #screen[data-page=style]{display:block;min-height:0;padding-top:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}
+.phone #screen[data-page=style]>h1{margin-top:20px}
+.phone #screen[data-page=style] .custom-preview{position:sticky;top:0;z-index:5;background:var(--paper)}
+
+/* Essence: a personal journey and transparent consultation pricing. */
+.phone #screen[data-page=essence]{display:block;overflow-y:auto;container-type:normal;padding-bottom:0}
+#screen[data-page=essence]>h1{font-size:30px;line-height:1.15;font-weight:600;letter-spacing:-.8px;margin-bottom:18px}
+#screen[data-page=essence]>.lead{line-height:1.55;margin-bottom:30px}
+#screen .usp-essence-timeline{list-style:none;padding:0;margin:0 0 24px}
+#screen .usp-essence-timeline li{position:relative;display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:12px;align-items:start;min-height:58px;padding-bottom:20px}
+#screen .usp-essence-timeline li:last-child{min-height:0;padding-bottom:0}
+#screen .usp-essence-timeline li:not(:last-child)::before{content:"";position:absolute;left:8px;top:20px;bottom:5px;width:2px;background:var(--line)}
+#screen .usp-timeline-dot{display:block;box-sizing:border-box;width:18px;height:18px;border:2px solid var(--accent);border-radius:50%;margin-top:3px;background:var(--paper)}
+#screen .is-complete .usp-timeline-dot{background:var(--accent)}
+#screen .usp-essence-timeline strong{font-size:var(--bodySize);line-height:1.4;font-weight:600}
+#screen .usp-timeline-status{font-size:var(--secondarySize);line-height:1.5;color:var(--muted);text-align:right;max-width:100px}
+#screen .usp-essence-pricing{padding:8px 18px;border-radius:22px;margin:28px 0 18px}
+#screen .usp-essence-pricing dl{margin:0}
+#screen .usp-essence-pricing dl>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
+#screen .usp-essence-pricing dl>div:last-child{border-bottom:0}
+#screen .usp-essence-pricing dl>div:nth-child(2){grid-template-columns:minmax(0,1fr) auto;gap:12px}
+#screen .usp-essence-pricing dl>div:nth-child(2) dt{white-space:nowrap}
+#screen .usp-essence-pricing dt{color:var(--muted);font-size:var(--bodySize);line-height:1.5}
+#screen .usp-essence-pricing dd{margin:0;text-align:right;font-size:var(--bodySize);font-weight:600;line-height:1.5;overflow-wrap:anywhere}
+#screen .usp-essence-terms{font-size:var(--secondarySize);line-height:1.6;margin-bottom:24px}
+#screen .usp-essence-dock{position:sticky;bottom:0;z-index:6;margin:0 calc(-1 * var(--pageInset));padding:14px var(--pageInset) 8px;background:var(--paper);border-top:1px solid var(--line)}
+#screen .usp-essence-dock .primary{margin:0;color:var(--ink)}
+#screen .usp-essence-dock .text{display:block;width:100%;min-height:44px;margin:8px 0 0;color:var(--muted);font-size:var(--secondarySize)}
+
+/* Three short illustrated demonstrations; no camera access or remote media. */
+.phone #screen[data-page=scan-guide]{display:block;overflow-y:auto;container-type:normal}
+#screen .usp-watch-guide{min-height:44px;font-size:var(--secondarySize)}
+#screen.usp-scan-page .usp-watch-guide{flex-shrink:0;margin:0;padding:8px 0}
+#screen .usp-guide-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:20px 0 16px}
+#screen .usp-guide-tabs button{min-height:44px;padding:8px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font-size:var(--secondarySize)}
+#screen .usp-guide-tabs .selected{border-color:var(--accent);background:var(--selectedSurface);box-shadow:inset 0 0 0 1px var(--accent)}
+#screen .usp-guide-demo{padding:12px 12px 0;margin:0 0 24px;overflow:hidden}
+#screen .usp-guide-stage{background:#f3eee6;border-radius:14px;overflow:hidden}
+#screen .usp-guide-stage svg{display:block;width:100%;max-height:320px}
+#screen .usp-guide-stage text{font:10px var(--bodyFont,sans-serif);fill:#706963}
+#screen .usp-guide-stage .usp-guide-seconds{font-size:15px;font-weight:600;fill:#24211f}
+#screen .usp-guide-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0}
+#screen .usp-guide-meta>span{font-size:11px;line-height:1.4;color:var(--muted)}
+#screen .usp-guide-meta button{font-size:11px;min-height:44px;padding:6px 0;white-space:nowrap}
+#screen .usp-guide-instructions{font-size:var(--bodySize);line-height:1.6}
+#screen .usp-guide-help{display:block;width:100%;min-height:44px;font-size:var(--secondarySize);margin-top:12px}
+.usp-guide-light{animation:usp-guide-light 4s ease-in-out infinite}
+.usp-guide-remove-glasses{animation:usp-guide-prep 6s ease-in-out infinite}
+.usp-guide-scan-line{animation:usp-guide-front 5s ease-in-out infinite}
+.usp-guide-phone{animation:usp-guide-sweep 8s ease-in-out infinite;transform-box:view-box;transform-origin:160px 146px}
+.usp-guide-demo.is-paused *{animation-play-state:paused!important}
+@keyframes usp-guide-light{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes usp-guide-prep{0%,12%{transform:translateY(0);opacity:1}35%,80%{transform:translateY(55px);opacity:0}100%{transform:translateY(0);opacity:1}}
+@keyframes usp-guide-front{0%,10%{transform:translateY(0);opacity:0}20%{opacity:.8}80%{transform:translateY(105px);opacity:.8}100%{transform:translateY(105px);opacity:0}}
+@keyframes usp-guide-sweep{0%,12%,100%{transform:translate(-108px,5px) rotate(-18deg)}50%{transform:translate(0,66px) rotate(0deg)}85%{transform:translate(108px,5px) rotate(18deg)}}
+@media(prefers-reduced-motion:reduce){.usp-guide-light,.usp-guide-remove-glasses,.usp-guide-scan-line,.usp-guide-phone{animation:none!important}.usp-guide-remove-glasses{opacity:0}.usp-guide-scan-line{transform:translateY(60px)}.usp-guide-phone{transform:translate(0,66px)}}
+
+/* Order attachments and the continuation of a personal Essence project. */
+#screen .usp-order-prescription{border-top:1px solid var(--line);margin-top:16px;padding-top:8px}
+#screen .usp-order-prescription h3{margin:8px 0;font-size:var(--secondarySize)}
+#screen .usp-proposal-art{margin:20px 0;background:#f0eae1;border:1px solid var(--line);border-radius:20px;padding:16px}
+#screen .usp-proposal-art svg{display:block;width:100%;height:auto}
+#screen .usp-proposal-art .note{display:block;text-align:center;font-size:var(--labelSize);line-height:1.5}
+.phone #screen[data-page^="essence-"],.phone #screen[data-page="order-prescription"]{display:block;overflow-y:auto;container-type:normal}
+#screen[data-page^="essence-"] .card>p{font-size:var(--bodySize);line-height:1.6;color:var(--muted)}
+#screen[data-page^="essence-"] .row{align-items:flex-start;gap:16px}
+#screen[data-page^="essence-"] .row>span:last-child{max-width:60%;text-align:right;overflow-wrap:anywhere}
+#screen #essenceChangeNote{width:100%;box-sizing:border-box;min-height:100px}
+#screen .usp-order-prescription .note{overflow-wrap:anywhere}
+
