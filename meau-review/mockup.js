@@ -189,7 +189,7 @@ function enhance(){
  updateChrome();
  applyFlow();
  if(s.page==='landing'){
- screen.innerHTML='<section class="usp-intro"><h1>Maximum Eyewear Autonomy</h1><p class="lead">Your face defines the fit.<br>Your choices define the expression.</p></section><div class="usp-film"><video id="landingFilm" muted loop playsinline controls preload="metadata" aria-label="MEAU expression film"><source src="../assets/express%20final1.mp4" type="video/mp4"></video><p class="usp-film-error" hidden>The film could not load. You can still explore your fit below.</p></div><button class="primary" data-usp-start>Discover your fit</button>';
+ screen.innerHTML='<section class="usp-intro"><h1>Maximum Eyewear Autonomy</h1><p class="lead">Your face defines the fit.<br>Your choices define the expression.</p></section><div class="usp-film"><video id="landingFilm" muted loop playsinline controls preload="metadata" aria-label="MEAU expression film"><source src="assets/express%20final1.mp4" type="video/mp4"></video><p class="usp-film-error" hidden>The film could not load. You can still explore your fit below.</p></div><button class="primary" data-usp-start>Discover your fit</button>';
  const film=document.getElementById('landingFilm');film.muted=true;
  film.addEventListener('error',()=>{film.hidden=true;screen.querySelector('.usp-film-error').hidden=false});
  film.querySelector('source').addEventListener('error',()=>{film.hidden=true;screen.querySelector('.usp-film-error').hidden=false});
